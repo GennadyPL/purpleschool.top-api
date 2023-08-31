@@ -1,0 +1,1 @@
+export const PRODUCT_NOT_FOUNT_ERROR = 'Не найдено продукта';
