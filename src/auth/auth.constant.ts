@@ -1,0 +1,1 @@
+export const ALREAD_REGISTER_ERROR = 'Токой пользователь уже был зарегистрирован'
