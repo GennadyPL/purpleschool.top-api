@@ -17,18 +17,17 @@ export class TopPageController {
 
 	@Get(':id')
 	async get(@Param('id') id: string){
-
-
+		return this.topPageService.findById(id);
 	}
 
 	@Delete(':id')
 	async delecte(@Param('id') id: string){
-
+		return this.topPageService.deleteById(id);
 	}
 
 	@Patch(':id')
 	async patch(@Param('id') id: string, @Body() dto: TopPageModel){
-
+		return this.topPageService.updateById(id,dto)
 	}
 
 	@HttpCode(200)

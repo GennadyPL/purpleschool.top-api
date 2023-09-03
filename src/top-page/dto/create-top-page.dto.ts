@@ -1,14 +1,11 @@
 import { Base, TimeStamps } from "@typegoose/typegoose/lib/defaultClasses";
 import { Type } from "class-transformer";
-import { IsArray, IsNumber, IsOptional, IsString, ValidateNested } from "class-validator";
+import { IsArray, IsEnum, IsNumber, IsOptional, IsString, ValidateNested, isEnum } from "class-validator";
+import { TopLevelCategory } from "../top-page.model/top-page.model";
 
 
-enum TopLevelCategory{
-	Courses,
-	Services,
-	Books,
-	Products
-}
+
+
 
 class hhData{
 	
@@ -34,13 +31,14 @@ class TopPageAdventage{
 	description: string;
 }
 
-export interface CreateProductDto extends Base{}
 
-export class CreateTopPageDto extends TimeStamps{
+
+export class CreateTopPageDto{
     
     
     // @ValidateNested()
     // @Type(()=>TopLevelCategory)
+	@IsEnum(TopLevelCategory)
     firstLevelCategory: TopLevelCategory;
 
 	@IsString()
