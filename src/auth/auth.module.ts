@@ -12,7 +12,7 @@ import { JwtStratagy } from './strategies/jwt.stratagy';
 @Module({
   controllers: [AuthController],
 
-  imports: [
+  imports: [  
     TypegooseModule.forFeature([
       {
         typegooseClass: UserModel,
@@ -21,7 +21,7 @@ import { JwtStratagy } from './strategies/jwt.stratagy';
         },
       },
     ]),
-    ConfigService,
+    ConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

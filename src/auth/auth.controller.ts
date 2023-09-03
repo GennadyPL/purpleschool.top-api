@@ -9,6 +9,8 @@ export class AuthController {
 	constructor(
 		private readonly authServer: AuthService
 	){}
+
+	@UsePipes(new ValidationPipe())
 	@HttpCode(201)
 	@Post('register')
 	async register(@Body() dto: AuthDto){

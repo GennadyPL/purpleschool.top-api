@@ -8,6 +8,7 @@ import { ReviewModule } from './review/review.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { getMongoConfig } from './configs/mongo.config';
+import { JwtStratagy } from './auth/strategies/jwt.stratagy';
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { getMongoConfig } from './configs/mongo.config';
     ReviewModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStratagy ],
 })
 export class AppModule {}

@@ -3,10 +3,10 @@ import { JwtModuleOptions } from "@nestjs/jwt"
 
 
 
-export const getJWTConfig= async (ConfigService: ConfigService): Promise<JwtModuleOptions>=>{
+export const getJWTConfig = async (configService: ConfigService): Promise<JwtModuleOptions>=>{
 
     return{
-        secret: ConfigService.get('JWT_SECRET')
+        secret: configService.get('JWT_SECRET')
     }
 
 }

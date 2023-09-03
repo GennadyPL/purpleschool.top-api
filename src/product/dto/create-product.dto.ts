@@ -37,7 +37,7 @@ export class CreateProductDto extends TimeStamps{
     @IsNumber()
 	credit: number;
 	
-
+    @IsNumber()
 	calculatedRating: number;
 	
 
